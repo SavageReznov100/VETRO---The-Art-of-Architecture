@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vh;
+  background-color: #151515;
+}
+
+h1 {
+  font-size: clamp(6rem, 12vw, 12rem);
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  line-height: clamp(1.2, 2vw, 1.5);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: clamp(1.2, 2vw, 1.5);
+}
+
+p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  line-height: clamp(1.2, 2vw, 1.5);
+}
+
+.header_text {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  line-height: clamp(1.2, 2vw, 1.5);
+  width: clamp(25ch, 50%, 50ch);
+}
+.about_text {
+  font-size: clamp(2rem, 5vw, 5.5rem);
+  line-height: clamp(1, 1vw, 1);
+  width: clamp(15ch, 100%, 35ch);
+}
+.about_text_p1 {
+  font-size: clamp(2rem, 2vw, 3.5rem);
+  line-height: clamp(1.2, 2vw, 1.5);
+}
+.about_text_p2 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-wrap: balance;
+}
+.brand_text_p1 {
+  font-size: clamp(0.5rem, 2vw, 0.8rem);
+  line-height: clamp(1.5, 2vw, 2);
+  width: clamp(10ch, 50%, 60ch);
+  padding-top: 2px;
+}
+.image-block {
+  position: absolute;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.image-1 {
+    width: 15vw;
+    left: 6%;
+    bottom: 14%;
+    @media (max-width: 640px) {
+      width: 35vw;
+      left: 4%;
+      bottom: 10%;
+    }
+  }
+  &.image-3 {
+    width: 18vw;
+    right: 6%;
+    top: 8%;
+    @media (max-width: 640px) {
+      width: 28vw;
+
+      top: 6%;
+      right: 4%;
+    }
+  }
+  &.image-4 {
+    width: 20vw;
+    right: 10%;
+    bottom: 5%;
+    @media (max-width: 640px) {
+      width: 25vw;
+
+      right: 6%;
+      bottom: 5%;
+    }
+  }
+  &.image-5 {
+    width: 16vw;
+    left: 4%;
+    top: 6%;
+    @media (max-width: 640px) {
+      width: 30vw;
+
+      left: 3%;
+      top: 5%;
+    }
+  }
+  img {
+    width: 100%;
+    object-fit: fill;
+  }
+}
+
+.transition-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  img {
+    width: 50vw;
+    display: flex;
+    z-index: 100;
+  }
+  &.final {
+    display: block;
+    top: 0;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    z-index: -100;
+
+    @media (max-width: 640px) {
+      top: -50px;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
