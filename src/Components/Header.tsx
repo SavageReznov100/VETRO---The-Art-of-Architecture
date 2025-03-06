@@ -32,19 +32,19 @@ const Header = () => {
           >
             <picture>
               <source
-                srcSet="/src/assets/Images/Hero/image-6.webp"
+                srcSet="/public/Hero/image-6.webp"
                 media="(max-width: 600px)"
               />
               <source
-                srcSet="/src/assets/Images/Hero/image-7.webp"
+                srcSet="/public/Hero/image-7.webp"
                 media="(max-width: 768px)"
               />
               <source
-                srcSet="/src/assets/Images/Hero/image-2.webp"
+                srcSet="/public/Hero/image-2.webp"
                 media="(min-width: 1024px)"
               />
               <motion.img
-                src={`/src/assets/Images/Hero/image-2.webp`}
+                src={`/public/image-2.webp`}
                 layout
                 layoutId="hero-image"
                 transition={{

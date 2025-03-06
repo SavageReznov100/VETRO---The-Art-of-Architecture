@@ -71,15 +71,15 @@ const Loader2 = () => {
       >
         <picture>
           <source
-            srcSet="/src/assets/Images/Hero/image-6.webp"
+            srcSet="/public/Hero/image-6.webp"
             media="(max-width: 600px)"
           />
           <source
-            srcSet="/src/assets/Images/Hero/image-7.webp"
+            srcSet="/public/Hero/image-7.webp"
             media="(max-width: 768px)"
           />
           <source
-            srcSet="/src/assets/Images/Hero/image-2.webp"
+            srcSet="/public/Hero/image-2.webp"
             media="(min-width: 1024px)"
           />
           <motion.img
@@ -110,7 +110,7 @@ interface ImageBlockProps {
 export const ImageBlock: FC<ImageBlockProps> = ({ variants, id }) => {
   return (
     <motion.div variants={variants} className={`image-block ${id}`}>
-      <img src={`/src/assets/Images/Hero/${id}.webp`} loading="lazy" alt={id} />
+      <img src={`/public/Hero/${id}.webp`} loading="lazy" alt={id} />
     </motion.div>
   );
 };
