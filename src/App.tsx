@@ -4,15 +4,11 @@ import Lenis from "lenis";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import SideBar from "./Components/SideBar";
-
-import { UseScreenDetector } from "./Utils/UseScreenDetector.tsx";
-
 const AboutUs = lazy(() => import("./Components/AboutUs"));
 const Services = lazy(() => import("./Components/Services"));
 const Work = lazy(() => import("./Components/Work.tsx"));
 const Clients = lazy(() => import("./Components/Clients"));
 const Brands = lazy(() => import("./Components/Brands"));
-
 const SectionLoader = () => (
   <div className="flex h-64 w-full items-center justify-center">
     <div className="h-32 w-3/4 animate-pulse rounded-md bg-white dark:bg-background"></div>
@@ -20,7 +16,6 @@ const SectionLoader = () => (
 );
 
 function App() {
-  // UseScreenDetector();
   const { loading, setIsMenu } = useContext(Context);
   let menuRef = useRef<HTMLDivElement>(null);
   const { theme } = useContext(Context);
