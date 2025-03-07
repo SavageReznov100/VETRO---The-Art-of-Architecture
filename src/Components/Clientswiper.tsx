@@ -39,9 +39,9 @@ const Clientswiper = ({ clients }: ClientswiperProps) => {
       >
         {clients.map((client, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-row justify-between gap-6 p-3 md:p-8 lg:p-10">
+            <div className="flex flex-col justify-between gap-6 p-3 md:flex-row md:p-8 lg:p-10">
               <div className="flex w-full basis-1/3 items-center justify-center">
-                <div className="h-60 w-60 overflow-hidden rounded-md">
+                <div className="h-32 w-32 overflow-hidden rounded-md md:h-60 md:w-60">
                   <img
                     src={client.image}
                     loading="lazy"

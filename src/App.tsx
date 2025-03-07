@@ -20,7 +20,7 @@ const SectionLoader = () => (
 );
 
 function App() {
-  UseScreenDetector();
+  // UseScreenDetector();
   const { loading, setIsMenu } = useContext(Context);
   let menuRef = useRef<HTMLDivElement>(null);
   const { theme } = useContext(Context);
