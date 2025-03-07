@@ -4,11 +4,7 @@ import Lenis from "lenis";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import SideBar from "./Components/SideBar";
-// import Brands from "./Components/Brands";
-// import Clients from "./Components/Clients";
-// import Work from "./Components/Work.tsx";
-// import Services from "./Components/Services";
-// import AboutUs from "./Components/AboutUs";
+
 import { UseScreenDetector } from "./Utils/UseScreenDetector.tsx";
 
 const AboutUs = lazy(() => import("./Components/AboutUs"));

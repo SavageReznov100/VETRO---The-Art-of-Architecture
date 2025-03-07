@@ -1,4 +1,3 @@
-// https://vite.dev/config/
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -6,23 +5,21 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Improve chunk size
     rollupOptions: {
       output: {
         manualChunks: {
-          // Split vendor code from your application code
+          // Separate vendor dependencies
           "vendor-react": ["react", "react-dom"],
-          "vendor-ui": ["swiper", "lenis"], // Include lenis if it's a significant dependency
+          "vendor-ui": ["swiper", "lenis"], // Ensure lenis is properly used
+          "vendor-router": ["react-router-dom"], // Useful if using React Router
         },
       },
+      treeshake: true, // Remove unused code
     },
-    // Increase warning limit if you prefer (optional)
-    chunkSizeWarningLimit: 800,
-    // Optimize asset compression
-    assetsInlineLimit: 4096, // 4kb
+    chunkSizeWarningLimit: 800, // Adjust warning limit for large bundles
+    assetsInlineLimit: 4096, // Inline assets below 4kb
   },
-  // Optimize images during development
   optimizeDeps: {
-    include: ["react", "react-dom", "swiper", "lenis"],
+    include: ["react", "react-dom", "swiper", "lenis", "react-router-dom"],
   },
 });

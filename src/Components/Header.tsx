@@ -4,6 +4,9 @@ import { Context } from "../Context/Provider";
 import Loader2 from "./Motion/Loader2";
 import Motion from "./Motion/Motion";
 import Rotate from "./Motion/Rotate";
+import image2 from "../assets/Images/Hero/image-2.webp";
+import image6 from "../assets/Images/Hero/image-6.webp";
+import image7 from "../assets/Images/Hero/image-7.webp";
 
 const Header = () => {
   const { loading } = useContext(Context);
@@ -31,20 +34,11 @@ const Header = () => {
             className="relative flex h-screen w-full overflow-hidden"
           >
             <picture>
-              <source
-                srcSet="/public/Hero/image-6.webp"
-                media="(max-width: 600px)"
-              />
-              <source
-                srcSet="/public/Hero/image-7.webp"
-                media="(max-width: 768px)"
-              />
-              <source
-                srcSet="/public/Hero/image-2.webp"
-                media="(min-width: 1024px)"
-              />
+              <source srcSet={image6} media="(max-width: 600px)" />
+              <source srcSet={image7} media="(max-width: 768px)" />
+              <source srcSet={image2} media="(min-width: 1024px)" />
               <motion.img
-                src={`/public/image-2.webp`}
+                src={image2}
                 layout
                 layoutId="hero-image"
                 transition={{
