@@ -85,7 +85,6 @@ const Loader2 = () => {
           <motion.img
             layout
             layoutId="hero-image"
-            loading="lazy"
             style={{
               height: "50vh",
               width: "50vw",

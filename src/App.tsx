@@ -1,15 +1,27 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext, useRef, lazy, Suspense } from "react";
 import { Context } from "./Context/Provider";
 import Lenis from "lenis";
-import Brands from "./Components/Brands";
-import Clients from "./Components/Clients";
 import Header from "./Components/Header";
-import Work from "./Components/Work.tsx";
-import Services from "./Components/Services";
 import Navbar from "./Components/Navbar";
 import SideBar from "./Components/SideBar";
-import AboutUs from "./Components/AboutUs";
+// import Brands from "./Components/Brands";
+// import Clients from "./Components/Clients";
+// import Work from "./Components/Work.tsx";
+// import Services from "./Components/Services";
+// import AboutUs from "./Components/AboutUs";
 import { UseScreenDetector } from "./Utils/UseScreenDetector.tsx";
+
+const AboutUs = lazy(() => import("./Components/AboutUs"));
+const Services = lazy(() => import("./Components/Services"));
+const Work = lazy(() => import("./Components/Work.tsx"));
+const Clients = lazy(() => import("./Components/Clients"));
+const Brands = lazy(() => import("./Components/Brands"));
+
+const SectionLoader = () => (
+  <div className="flex h-64 w-full items-center justify-center">
+    <div className="h-32 w-3/4 animate-pulse rounded-md bg-white dark:bg-background"></div>
+  </div>
+);
 
 function App() {
   UseScreenDetector();
@@ -22,6 +34,23 @@ function App() {
   const ClientsRef = useRef(null);
   const BrandsRef = useRef(null);
   const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    const preloadImages = [
+      "/public/Hero/image-1.webp",
+      "/public/Hero/image-2.webp",
+      "/public/Hero/image-3.webp",
+      "/public/Hero/image-4.webp",
+      "/public/Hero/image-5.webp",
+      "/public/Hero/image-6.webp",
+      "/public/Hero/image-7.webp",
+    ];
+
+    preloadImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.2 });
@@ -83,19 +112,29 @@ function App() {
           <SideBar ref={menuRef} scrollToSection={scrollToSection} />
           <Navbar />
           <section ref={AboutUsRef}>
-            <AboutUs />
+            <Suspense fallback={<SectionLoader />}>
+              <AboutUs />
+            </Suspense>
           </section>
           <section ref={ServicesRef}>
-            <Services />
+            <Suspense fallback={<SectionLoader />}>
+              <Services />
+            </Suspense>
           </section>
           <section ref={WorkRef}>
-            <Work />
+            <Suspense fallback={<SectionLoader />}>
+              <Work />
+            </Suspense>
           </section>
           <section ref={ClientsRef}>
-            <Clients />
+            <Suspense fallback={<SectionLoader />}>
+              <Clients />
+            </Suspense>
           </section>
           <section ref={BrandsRef}>
-            <Brands />
+            <Suspense fallback={<SectionLoader />}>
+              <Brands />
+            </Suspense>
           </section>
         </>
       )}
