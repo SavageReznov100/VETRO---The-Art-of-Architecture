@@ -1,3 +1,4 @@
+// https://vite.dev/config/
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -9,10 +10,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Split vendor code (React, etc) from your application code
-          "vendor-react": ["react", "react-dom", "react-router-dom"],
-          "vendor-ui": ["swiper"],
-          // Add other chunking as needed based on your dependencies
+          // Split vendor code from your application code
+          "vendor-react": ["react", "react-dom"],
+          "vendor-ui": ["swiper", "lenis"], // Include lenis if it's a significant dependency
         },
       },
     },
@@ -23,12 +23,6 @@ export default defineConfig({
   },
   // Optimize images during development
   optimizeDeps: {
-    include: ["react", "react-dom", "swiper"],
-  },
-  // Improve browser caching
-  server: {
-    headers: {
-      "Cache-Control": "max-age=31536000,immutable",
-    },
+    include: ["react", "react-dom", "swiper", "lenis"],
   },
 });
