@@ -9,6 +9,8 @@ const Services = lazy(() => import("./Components/Services"));
 const Work = lazy(() => import("./Components/Work.tsx"));
 const Clients = lazy(() => import("./Components/Clients"));
 const Brands = lazy(() => import("./Components/Brands"));
+const Contact = lazy(() => import("./Components/Contact.tsx"));
+
 const SectionLoader = () => (
   <div className="flex h-64 w-full items-center justify-center">
     <div className="h-32 w-3/4 animate-pulse rounded-md bg-white dark:bg-background"></div>
@@ -24,24 +26,8 @@ function App() {
   const WorkRef = useRef(null);
   const ClientsRef = useRef(null);
   const BrandsRef = useRef(null);
+  const ContactRef = useRef(null);
   const lenisRef = useRef<Lenis | null>(null);
-
-  useEffect(() => {
-    const preloadImages = [
-      "/public/Hero/image-1.webp",
-      "/public/Hero/image-2.webp",
-      "/public/Hero/image-3.webp",
-      "/public/Hero/image-4.webp",
-      "/public/Hero/image-5.webp",
-      "/public/Hero/image-6.webp",
-      "/public/Hero/image-7.webp",
-    ];
-
-    preloadImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.2 });
@@ -66,7 +52,9 @@ function App() {
               ? ClientsRef
               : section === "Brands"
                 ? BrandsRef
-                : null;
+                : section === "Contact"
+                  ? ContactRef
+                  : null;
 
     if (targetRef && lenisRef.current) {
       if (targetRef.current) {
@@ -125,6 +113,11 @@ function App() {
           <section ref={BrandsRef}>
             <Suspense fallback={<SectionLoader />}>
               <Brands />
+            </Suspense>
+          </section>
+          <section ref={ContactRef}>
+            <Suspense fallback={<SectionLoader />}>
+              <Contact scrollToSection={scrollToSection} />
             </Suspense>
           </section>
         </>

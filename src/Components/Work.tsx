@@ -7,7 +7,7 @@ import SplitText from "./Motion/SplitText";
 
 const Work = () => {
   const container = useRef(null);
-  const { theme, setTheme } = useContext(Context);
+  const { setTheme } = useContext(Context);
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -18,16 +18,10 @@ const Work = () => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
       const newTheme = latest > 0.2 ? "light" : "dark";
       setTheme(newTheme);
-      console.log("Scroll progress:", latest);
-      console.log("Setting theme to:", newTheme);
     });
 
     return () => unsubscribe();
   }, [scrollYProgress, setTheme]);
-
-  useEffect(() => {
-    console.log("Current theme:", theme);
-  }, [theme]);
 
   return (
     <section ref={container}>

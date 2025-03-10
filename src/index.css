@@ -53,6 +53,10 @@ p {
   width: clamp(10ch, 50%, 60ch);
   padding-top: 2px;
 }
+.contact_text {
+  font-size: clamp(7rem, 15vw, 15rem);
+  letter-spacing: 0.1em;
+}
 .image-block {
   position: absolute;
   transform-origin: center;

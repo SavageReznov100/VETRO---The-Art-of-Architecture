@@ -39,74 +39,78 @@ const Brands = () => {
     },
   };
   return (
-    <section className="container bg-explosivegrey py-10 dark:bg-background">
-      <div className="flex justify-center text-center text-black dark:text-explosivegrey">
-        <p className="about_text">
-          Trusted by Leading Brands: Our Legacy of Architectural Excellence
-        </p>
-      </div>
-      {architectureProjects.map((projects, index) => (
-        <div
-          key={index}
-          onClick={() => handleAccordionClick(projects.id)}
-          onMouseEnter={() => handleHover(projects.id)}
-          onMouseLeave={() => handleHover(null)}
-          className="relative block cursor-pointer py-4"
-        >
-          <button className="flex w-full flex-row text-black dark:text-explosivegrey">
-            <p className="basis-1/2 text-start uppercase">{projects.brand}</p>
-            <p className="basis-1/4 text-start uppercase">{projects.service}</p>
-            <div className="flex basis-1/4 items-center justify-end gap-2 uppercase">
-              {accordionOpen === projects.id ? <p>Less</p> : <p>More</p>}
-              {accordionOpen === projects.id ? (
-                <span>
-                  {theme === "dark" ? (
-                    <img src={MinusWhite} alt="MinusWhite" />
-                  ) : (
-                    <img src={Minus} alt="Minus" />
-                  )}
-                </span>
-              ) : (
-                <span>
-                  {theme === "dark" ? (
-                    <img src={PlusWhite} alt="PlusWhite" />
-                  ) : (
-                    <img src={Plus} alt="Plus" />
-                  )}
-                </span>
-              )}
-            </div>
-          </button>
-          <div
-            className={classNames(
-              "grid grid-cols-2 overflow-hidden transition-all duration-300 ease-in-out",
-              accordionOpen === projects.id
-                ? "grid-rows-[1fr] opacity-100"
-                : "grid-rows-[0fr] opacity-0",
-            )}
-          >
-            <div className="order-first"></div>
-            <div className="overflow-hidden">
-              <p className="brand_text_p1">{projects.description}</p>
-            </div>
-          </div>
-          <motion.div
-            className={classNames(
-              "absolute bottom-0 left-0 right-0 w-full",
-              accordionOpen === projects.id
-                ? "h-[1.5px] bg-black dark:bg-explosivegrey"
-                : "h-[1px] bg-black/40 dark:bg-explosivegrey/40",
-            )}
-          />
-          <motion.div
-            variants={variants}
-            animate={isHovered === projects.id ? "hover" : "rest"}
-            className={classNames(
-              "absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-black dark:bg-explosivegrey",
-            )}
-          />
+    <section className="bg-explosivegrey py-10 transition-colors duration-300 ease-linear dark:bg-background">
+      <div className="container">
+        <div className="flex justify-center text-center text-black dark:text-explosivegrey">
+          <p className="about_text">
+            Trusted by Leading Brands: Our Legacy of Architectural Excellence
+          </p>
         </div>
-      ))}
+        {architectureProjects.map((projects, index) => (
+          <div
+            key={index}
+            onClick={() => handleAccordionClick(projects.id)}
+            onMouseEnter={() => handleHover(projects.id)}
+            onMouseLeave={() => handleHover(null)}
+            className="relative block cursor-pointer py-4"
+          >
+            <button className="flex w-full flex-row text-black dark:text-explosivegrey">
+              <p className="basis-1/2 text-start uppercase">{projects.brand}</p>
+              <p className="basis-1/4 text-start uppercase">
+                {projects.service}
+              </p>
+              <div className="flex basis-1/4 items-center justify-end gap-2 uppercase">
+                {accordionOpen === projects.id ? <p>Less</p> : <p>More</p>}
+                {accordionOpen === projects.id ? (
+                  <span>
+                    {theme === "dark" ? (
+                      <img src={MinusWhite} alt="MinusWhite" />
+                    ) : (
+                      <img src={Minus} alt="Minus" />
+                    )}
+                  </span>
+                ) : (
+                  <span>
+                    {theme === "dark" ? (
+                      <img src={PlusWhite} alt="PlusWhite" />
+                    ) : (
+                      <img src={Plus} alt="Plus" />
+                    )}
+                  </span>
+                )}
+              </div>
+            </button>
+            <div
+              className={classNames(
+                "grid grid-cols-2 overflow-hidden transition-all duration-300 ease-in-out",
+                accordionOpen === projects.id
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0",
+              )}
+            >
+              <div className="order-first"></div>
+              <div className="overflow-hidden text-black dark:text-explosivegrey">
+                <p className="brand_text_p1">{projects.description}</p>
+              </div>
+            </div>
+            <motion.div
+              className={classNames(
+                "absolute bottom-0 left-0 right-0 w-full",
+                accordionOpen === projects.id
+                  ? "h-[1.5px] bg-black dark:bg-explosivegrey"
+                  : "h-[1px] bg-black/40 dark:bg-explosivegrey/40",
+              )}
+            />
+            <motion.div
+              variants={variants}
+              animate={isHovered === projects.id ? "hover" : "rest"}
+              className={classNames(
+                "absolute bottom-0 left-0 right-0 h-[1.5px] w-full bg-black dark:bg-explosivegrey",
+              )}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

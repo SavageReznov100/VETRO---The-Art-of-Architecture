@@ -53,16 +53,6 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
           delayChildren: 0.3,
         },
       },
-      // exit: {
-      //   x: 50,
-      //   opacity: 0,
-      //   transition: {
-      //     duration: 1.2,
-      //     delayChildren: 0.2,
-      //     staggerChildren: 0.1,
-      //     staggerDirection: -1,
-      //   },
-      // },
     };
 
     const letterVariants = {
@@ -75,14 +65,6 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
           ease: "easeIn",
         },
       },
-      // exit: {
-      //   opacity: 0,
-      //   y: 50,
-      //   transition: {
-      //     duration: 0.4,
-      //     ease: "easeOut",
-      //   },
-      // },
     };
 
     return (
