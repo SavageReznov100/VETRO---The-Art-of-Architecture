@@ -49,13 +49,13 @@ const Header = () => {
                   position: "absolute",
                   inset: 0,
                   width: "100%",
-                  height: "100dvh",
+                  height: "100%",
                   objectFit: "cover",
                 }}
               />
             </picture>
 
-            <div className="absolute bottom-10 left-5 z-20 font-playfair text-white md:left-16 lg:bottom-0">
+            <div className="bottom-15 absolute left-5 z-20 font-playfair text-white md:left-16 lg:bottom-0">
               <Motion direction="up" duration={1} delay={0.7}>
                 <h1>VETRO</h1>
               </Motion>
