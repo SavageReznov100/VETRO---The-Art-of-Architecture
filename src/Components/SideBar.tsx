@@ -34,7 +34,6 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
       exit: {
         x: "100%",
         transition: {
-          delay: 0.5,
           duration: 0.5,
           ease: "easeInOut",
           when: "afterChildren",
@@ -101,9 +100,9 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="cursor-pointer text-2xl font-bold text-black dark:text-white md:text-6xl"
+                    className="cursor-pointer text-2xl font-bold text-black dark:text-white md:text-5xl"
                   >
-                    <a className="transition-all duration-300 hover:!opacity-100 group-hover:opacity-50">
+                    <a className="font-raleway transition-all duration-300 hover:!opacity-100 group-hover:opacity-50">
                       {item.content.split("").map((letter, index) => (
                         <motion.span
                           key={index}
@@ -123,7 +122,7 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
                     </a>
                   </motion.div>
                 ))}
-                <div className="flex flex-row gap-x-4">
+                <div className="flex flex-row gap-x-4 pt-10">
                   <FacebookIcon />
                   <InstagramIcon />
                   <LinkedinIcon />

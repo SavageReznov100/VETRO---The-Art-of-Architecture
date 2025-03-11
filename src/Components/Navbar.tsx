@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between py-2">
         <div>
-          <h1 className="text-3xl tracking-widest">VETRO</h1>
+          <h1 className="font-playfair text-3xl tracking-widest">VETRO</h1>
         </div>
         <div onClick={toggleMenu} className="cursor-pointer">
           {theme == "dark" ? (

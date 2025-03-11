@@ -87,7 +87,7 @@ const Services = () => {
       <div className="container flex justify-center pt-5 text-center text-explosivegrey">
         <p className="about_text">
           Why
-          <span className="px-1 uppercase tracking-wider text-white">
+          <span className="px-2 font-playfair uppercase tracking-wider text-white">
             "Vetro"
           </span>
           is the Foundation for Elevating Your Architectural Vision

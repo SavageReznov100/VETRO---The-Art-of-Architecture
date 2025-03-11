@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +20,7 @@ h1 {
 h3 {
   font-size: clamp(1.5rem, 2vw, 2.5rem);
   line-height: clamp(1.2, 2vw, 1.5);
+  font-family: "Libre Caslon Display", serif;
 }
 
 h4 {
@@ -27,6 +31,7 @@ h4 {
 p {
   font-size: clamp(0.8rem, 2vw, 1rem);
   line-height: clamp(1.2, 2vw, 1.5);
+  font-family: "Raleway", sans-serif;
 }
 
 .header_text {
@@ -38,24 +43,29 @@ p {
   font-size: clamp(2rem, 5vw, 5.5rem);
   line-height: clamp(1, 1vw, 1);
   width: clamp(15ch, 100%, 35ch);
+  font-family: "Lora", serif;
 }
 .about_text_p1 {
   font-size: clamp(2rem, 2vw, 3.5rem);
   line-height: clamp(1.2, 2vw, 1.5);
+  font-family: "Lora", serif;
 }
 .about_text_p2 {
   font-size: clamp(1rem, 2vw, 1.5rem);
   text-wrap: balance;
+  font-family: "Lora", serif;
 }
 .brand_text_p1 {
   font-size: clamp(0.5rem, 2vw, 0.8rem);
   line-height: clamp(1.5, 2vw, 2);
   width: clamp(10ch, 50%, 60ch);
   padding-top: 2px;
+  font-family: "Lora", serif;
 }
 .contact_text {
   font-size: clamp(5rem, 15vw, 15rem);
   letter-spacing: 0.1em;
+  font-family: "Playfair Display", serif;
 }
 .image-block {
   position: absolute;

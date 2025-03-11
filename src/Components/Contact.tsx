@@ -119,9 +119,13 @@ const Contact: React.FC<SideBarProps> = ({ scrollToSection }) => {
                 © 2021 Vetro. All Rights Reserved.
               </p>
             </div>
-            <div className="flex gap-x-4 uppercase tracking-widest">
-              <p className="text-2xl">privacy </p>
-              <p className="text-2xl">terms </p>
+            <div className="group flex gap-x-4 uppercase tracking-widest">
+              <p className="cursor-pointer text-xl hover:!opacity-100 group-hover:opacity-50 md:text-2xl">
+                privacy
+              </p>
+              <p className="cursor-pointer text-xl hover:!opacity-100 group-hover:opacity-50 md:text-2xl">
+                terms
+              </p>
             </div>
           </div>
         </div>

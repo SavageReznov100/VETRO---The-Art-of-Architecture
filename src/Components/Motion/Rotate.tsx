@@ -34,7 +34,7 @@ const Rotate = () => {
         if (state >= items.length - 1) return 0;
         return state + 1;
       });
-    }, 4000);
+    }, 7000);
     return () => clearInterval(id);
   }, []);
 
@@ -43,7 +43,7 @@ const Rotate = () => {
       <AnimatePresence>
         <Motion direction="left" duration={1} delay={0.7}>
           <motion.div
-            className="absolute bottom-2 right-2 p-20 text-4xl uppercase"
+            className="absolute bottom-2 right-2 p-20 font-raleway text-4xl uppercase"
             key={items[index].id}
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
